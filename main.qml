@@ -63,8 +63,13 @@ ApplicationWindow {
 
         onClicked: {
             userList.text = ""
-            var str = fileContent.getFileContent() + "\n"
-            userList.text = str
+            var people = fileContent.getFileContent()
+
+            for (var j = 0; j < people.length; j++) {
+                userList.text += j + 1 + " " + people[j]
+            }
+
+
         }
     }
 

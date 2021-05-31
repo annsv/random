@@ -10,7 +10,7 @@ FileContent::FileContent(QObject *parent) : QObject(parent)
 
 }
 
-QStringList FileContent::getFileContent()
+QList<QString> FileContent::getFileContent()
 {
     QFile file("TextFile1.txt");
     if ((file.exists())&&(file.open(QIODevice::ReadOnly)))
@@ -33,7 +33,7 @@ QStringList FileContent::getFileContent()
     }
     //qDebug() << m_people;
     return m_people;
-    emit modelChanged(); //emitting signal
+   // emit modelChanged(); //emitting signal
 }
 
 QString FileContent::getRandomUser()
